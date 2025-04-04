@@ -24,6 +24,14 @@ return {
 		lazy = false,
 
 		config = function()
+			require("lspconfig").pyright.setup({})
+			require("lspconfig").racket_langserver.setup({
+				capabilities = {
+					textDocument = {
+						semanticTokens = nil,
+					},
+				},
+			})
 			vim.api.nvim_create_autocmd("LspAttach", {
 				group = vim.api.nvim_create_augroup("kickstart-lsp-attach", { clear = true }),
 				callback = function(event)
@@ -83,7 +91,7 @@ return {
 			capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 
 			local servers = {
-				clangd = { cmd = { "clangd", "--function-arg-placeholders=false" } },
+				clangd = {},
 				gopls = {},
 				lua_ls = {
 					settings = {
@@ -105,6 +113,8 @@ return {
 				"stylua",
 			})
 			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
+			require("java").setup()
+			require("lspconfig").jdtls.setup({})
 
 			require("mason-lspconfig").setup({
 				handlers = {

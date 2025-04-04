@@ -25,11 +25,11 @@ return {
 				window = {
 					completion = {
 						border = "rounded",
-						winhighlight = "NormalFloat:NormalFloat,FloatBorder:FloatBorder",
+						-- winhighlight = "NormalFloat:NormalFloat,FloatBorder:FloatBorder",
 					},
 					documentation = {
 						border = "rounded",
-						winhighlight = "NormalFloat:NormalFloat,FloatBorder:FloatBorder",
+						-- winhighlight = "NormalFloat:NormalFloat,FloatBorder:FloatBorder",
 					},
 				},
 				mapping = cmp.mapping.preset.insert({

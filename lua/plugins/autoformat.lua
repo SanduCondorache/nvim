@@ -30,7 +30,8 @@ return {
 		formatters_by_ft = {
 			lua = { "stylua" },
 			cpp = { "c_formatter" },
-			c = { "c_formatter" },
+			c = { "clang-format" },
+			go = { "gofumt" },
 		},
 		formatters = {
 			c_formatter = {
